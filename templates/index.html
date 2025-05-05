@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatbotB24E</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="chatbox">
+        <h2>Chatbot B24E</h2>
+        <div class="menu">
+            <h3>Menu: Pilih kata yang ingin digunakan untuk berinteraksi dengan Ardx:</h3>
+            <ul>
+                <li><button onclick="setMessage('saya')">Saya</button></li>
+                <li><button onclick="setMessage('aku')">Aku</button></li>
+                <li><button onclick="setMessage('sayang')">Sayang</button></li>
+                <li><button onclick="setMessage('halo')">Halo</button></li>
+                <li><button onclick="setMessage('terima kasih')">Terima Kasih</button></li>
+                <li><button onclick="setMessage('about me')">About me</button></li>
+                <li><button onclick="setMessage('apakabar')">apakabar</button></li>
+                <li><button onclick="setMessage('kata kasar(opsional)')">kata kasar(opsional)</button></li>
+            </ul>
+        </div>
+             <!-- Kursor kustom -->
+             <div class="cursor-effect"></div>
+             <canvas id="cursorCanvas"></canvas>
+
+        <form method="post">
+            <input id="user_input" name="message" placeholder="Ketik sesuatu..." required style="width: 90%; padding: 8px;">
+            <button type="submit" style="margin-top: 10px;">Kirim</button>
+        </form>
+
+        {% if user_input %}
+            <div class="message"><strong>Kamu:</strong> {{ user_input }}</div>
+            <div class="message"><strong>Bot Bangkit B24E:</strong> {{ bot_response }}</div>
+        {% endif %}
+    </div>
+    <script>
+        // Set predefined message in the input when user clicks a button
+        function setMessage(message) {
+            document.getElementById("user_input").value = message;
+        }
+
+    const cursorEffect = document.querySelector('.cursor-effect');
+    document.addEventListener('mousemove', e => {
+        cursorEffect.style.top = `${e.clientY}px`;
+        cursorEffect.style.left = `${e.clientX}px`;
+    });
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+</html>
