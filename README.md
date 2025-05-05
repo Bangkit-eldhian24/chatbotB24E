@@ -5,7 +5,7 @@ Chatbot web sederhana berbasis Python + Flask. Bisa dijalankan di lokal, dikemba
 ## tutor ( mungkin eror y sudahlah )
 
 ```bash
-git clone https://github.com/username/chatbotardx.git
-cd chatbotardx
+git clone https://github.com/username/chatbotB24E.git
+cd chatbotB24E
 pip install -r requirements.txt
 python app.py
