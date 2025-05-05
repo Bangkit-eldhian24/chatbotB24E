@@ -2,7 +2,7 @@
 
 Chatbot web sederhana berbasis Python + Flask. Bisa dijalankan di lokal, dikembangkan, dan di-share ke GitHub.
 
-## Cara Jalankan
+## tutor ( mungkin eror y sudahlah )
 
 ```bash
 git clone https://github.com/username/chatbotardx.git
